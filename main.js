@@ -4,7 +4,7 @@
 function renderCoffee(coffee) {
     // keeps h1 and p together
     var html = '<div class="coffee w-50 d-inline-flex align-items-baseline mb-4">';
-    html += '<h1>' + coffee.name + '</h1>';
+    html += '<h2>' + coffee.name + '</h2>';
     html += '<p class="ml-2">' + coffee.roast + '</p>';
     html += '</div>';
 
@@ -30,7 +30,7 @@ function updateCoffees(e) {
     var newCoffeeListing = [];
 
     for (var i = 0; i < coffees.length; i++) {
-        var roast = coffees[i].roast;
+        let roast = coffees[i].roast;
         if (roast === selectedRoast || selectedRoast === "all") {
             filteredCoffees.push(coffees[i]);
         }
@@ -45,31 +45,6 @@ function updateCoffees(e) {
 
     coffeeList.innerHTML = renderCoffees(newCoffeeListing);
 }
-
-
-
-
-// function updateCoffees(e) {
-//     e.preventDefault(); // don't submit the form, we just want to update the data
-//     var selectedRoast = roastSelection.value.toLowerCase();
-//     var selectedCoffee = coffeeSelection.value.toLowerCase();
-//     var filteredCoffees = [];
-//
-//     coffees.forEach(function(coffee) {
-//         if (coffee.roast === selectedRoast || selectedRoast === "all") {
-//             filteredCoffees.push(coffee);
-//         }
-//     });
-//     coffees.forEach(function(search) {
-//         if (search.name === selectedCoffee || name.includes(selectedCoffee)) {
-//             filteredCoffees.push(search);
-//         }
-//     });
-//     coffeeList.innerHTML = renderCoffees();
-// }
-
-
-
 
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
@@ -103,3 +78,30 @@ coffeeSelection.addEventListener('input', updateCoffees);
 
 
 
+
+
+
+
+
+
+
+
+// function updateCoffees(e) {
+//     e.preventDefault(); // don't submit the form, we just want to update the data
+//     var selectedRoast = roastSelection.value.toLowerCase();
+//     var selectedCoffee = coffeeSelection.value.toLowerCase();
+//     var filteredCoffees = [];
+//     var newCoffeeListing = [];
+//
+//     coffees.forEach(function(coffee) {
+//         if (coffee.roast === selectedRoast || selectedRoast === "all") {
+//             filteredCoffees.push(coffee);
+//         }
+//     });
+//     coffees.forEach(function(coffee) {
+//         if (coffee.name === selectedCoffee || name.includes(selectedCoffee)) {
+//             newCoffeeListing.push();
+//         }
+//     });
+//     coffeeList.innerHTML = renderCoffees(newCoffeeListing);
+// }
