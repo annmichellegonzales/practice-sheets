@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>practice</title>
+</head>
+<body>
+
+<p id="sample">Sample code</p>
+<button onclick="changeColor('pink')">Pink</button>
+<button onclick="changeColor('blue')">Blue</button>
+<button onclick="changeColor('purple')">Purple</button>
+
+<p id="demo"></p>
+
+<h2 id="chore-list"></h2>
+
+
+<script>
+function changeColor(newColor) {
+    var element = document.getElementById("sample");
+    element.style.color = newColor;
+}
+
+
+var arr = [1,2,3,4,5];
+
+arr.forEach(function (num){
+    document.getElementById("demo").innerHTML += num;
+});
+
+var chores = ["clean room", "wash dishes", "litter box"]
+
+chores.forEach(function (chore) {
+    document.getElementById("chore-list").innerHTML += "Please do your chore: " + chore + "<br>";
+});
+
+
+</script>
+
+</body>
+</html>

@@ -30,7 +30,7 @@ function updateCoffees(e) {
     var newCoffeeListing = [];
 
     for (var i = 0; i < coffees.length; i++) {
-        let roast = coffees[i].roast;
+        var roast = coffees[i].roast;
         if (roast === selectedRoast || selectedRoast === "all") {
             filteredCoffees.push(coffees[i]);
         }
@@ -45,6 +45,31 @@ function updateCoffees(e) {
 
     coffeeList.innerHTML = renderCoffees(newCoffeeListing);
 }
+
+
+
+
+// function updateCoffees(e) {
+//     e.preventDefault(); // don't submit the form, we just want to update the data
+//     var selectedRoast = roastSelection.value.toLowerCase();
+//     var selectedCoffee = coffeeSelection.value.toLowerCase();
+//     var filteredCoffees = [];
+//
+//     coffees.forEach(function(coffee) {
+//         if (coffee.roast === selectedRoast || selectedRoast === "all") {
+//             filteredCoffees.push(coffee);
+//         }
+//     });
+//     coffees.forEach(function(search) {
+//         if (search.name === selectedCoffee || name.includes(selectedCoffee)) {
+//             filteredCoffees.push(search);
+//         }
+//     });
+//     coffeeList.innerHTML = renderCoffees();
+// }
+
+
+
 
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
